@@ -4,11 +4,9 @@ import downloader
 
 
 topic = downloader.download()
-imgs = os.listdir('downloads/'+topic)
-print(imgs)
 clipsArr = []
-
 def createVid():
+    imgs = os.listdir('downloads/'+topic)
     for img in imgs:
         clip = ImageClip("downloads/"+topic+"/"+img)
         clip = clip.resize( (1920,1080) )
