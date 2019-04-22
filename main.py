@@ -1,15 +1,29 @@
 from moviepy.editor import *
 import os
-#create array of images and convert them into jpg!!!!!!!!!!!!!
+import downloader
 
+# change loaction of folder
 imgs = os.listdir('pics/')
 clipsArr = []
+downloader.download()
 
-for img in imgs:
-    clip = ImageClip("pics/"+img)
-    clip = clip.resize( (1920,1080) )
-    clip = clip.set_duration(t = 5)
-    clipsArr.append(clip)
+def createVid():
+    for img in imgs:
+        clip = ImageClip("pics/"+img)
+        clip = clip.resize( (1920,1080) )
+        clip = clip.set_duration(t = 5)
+        clipsArr.append(clip)
+
+#ask user if finished with selection
+print("Delete unwanted images from the downloads folder")
+def selectingInput():
+    selecting = input("please type 1 when finised: ")
+    if selecting != "1":
+        selectingInput()
+    else:
+        createVid()
+
+selectingInput()
 
 #change params of IMAGECLIP to the array!!!!!!!!!!!!!!!!!!!!
 print(clipsArr)
