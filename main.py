@@ -1,5 +1,4 @@
 from moviepy.editor import *
-
 import os
 #create array of images and convert them into jpg!!!!!!!!!!!!!
 
