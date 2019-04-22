@@ -5,3 +5,4 @@ def download():
     response = google_images_download.googleimagesdownload()
     arguments = {"keywords":topic,"limit":numOfPics}
     paths = response.download(arguments)
+    return topic
